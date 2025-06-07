@@ -29,8 +29,8 @@ public class ComboEditorApp extends Application {
     private String customTextColor = "#333333";
     private String customButtonColor = "#E0E0E0";
     private String customAccentColor = "#B0E0E6";
-    private VBox sidebar; // Reference to sidebar for updates
-    private HostServices hostServices; // For opening URLs
+    private VBox sidebar; 
+    private HostServices hostServices; 
 
     @Override
     public void init() {
@@ -79,7 +79,6 @@ public class ComboEditorApp extends Application {
         VBox sidebar = new VBox(10);
         sidebar.setPrefWidth(100);
         sidebar.setPadding(new Insets(20));
-        // Set sidebar background color based on theme
         if (currentStyle.equals("milky.css")) {
             sidebar.setStyle("-fx-background-color: #99b8b6; -fx-border-color: " + customAccentColor + "; -fx-border-width: 0 1 0 0; -fx-effect: none;");
         } else {
@@ -101,23 +100,22 @@ public class ComboEditorApp extends Application {
         addShadowEffect(settings);
         settings.setOnAction(e -> showSettings(primaryStage));
 
-        // Add footer with GitHub and Telegram links
         VBox footer = new VBox(5);
         footer.setAlignment(Pos.BOTTOM_CENTER);
 
         Hyperlink githubLink = new Hyperlink("GitHub");
         githubLink.setStyle("-fx-text-fill: " + customAccentColor + "; -fx-font-size: 12px; -fx-font-family: 'Arial';");
-        githubLink.setOnAction(e -> openLink("https://github.com/Stiwyxd")); // Updated GitHub link
+        githubLink.setOnAction(e -> openLink("https://github.com/Stiwyxd"));
 
         Hyperlink telegramLink = new Hyperlink("Telegram");
         telegramLink.setStyle("-fx-text-fill: " + customAccentColor + "; -fx-font-size: 12px; -fx-font-family: 'Arial';");
-        telegramLink.setOnAction(e -> openLink("https://t.me/Stiwy_Xd")); // Updated Telegram link
+        telegramLink.setOnAction(e -> openLink("https://t.me/Stiwy_Xd")); 
 
         footer.getChildren().addAll(githubLink, telegramLink);
 
         sidebar.getChildren().addAll(home, projects, settings, footer);
         sidebar.setAlignment(Pos.TOP_CENTER);
-        VBox.setVgrow(footer, Priority.ALWAYS); // Push footer to the bottom
+        VBox.setVgrow(footer, Priority.ALWAYS); 
         return sidebar;
     }
 
@@ -302,7 +300,7 @@ public class ComboEditorApp extends Application {
                         System.err.println("Failed to load CSS: " + e.getMessage());
                     }
                     showNotification("Theme Changed", "Switched to " + currentStyle.replace(".css", "") + " theme!");
-                    // Update sidebar background color based on theme
+                    
                     if (currentStyle.equals("milky.css")) {
                         sidebar.setStyle("-fx-background-color: #99b8b6; -fx-border-color: " + customAccentColor + "; -fx-border-width: 0 1 0 0; -fx-effect: none;");
                     } else {
@@ -322,7 +320,7 @@ public class ComboEditorApp extends Application {
     }
 
     private void updateCustomStyles() {
-        // Update sidebar
+        
         if (currentStyle.equals("milky.css")) {
             sidebar.setStyle("-fx-background-color: #99b8b6; -fx-border-color: " + customAccentColor + "; -fx-border-width: 0 1 0 0; -fx-effect: none;");
         } else {
@@ -334,15 +332,13 @@ public class ComboEditorApp extends Application {
             }
         }
 
-        // Update tabs content
         TabPane tabPane = (TabPane) ((BorderPane) scene.getRoot()).getCenter();
         for (Tab tab : tabPane.getTabs()) {
             VBox content = (VBox) tab.getContent();
             content.setStyle("-fx-background-color: rgba(240, 240, 240, 0.95); -fx-border-color: " + customAccentColor + "; -fx-border-radius: 15; -fx-background-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 15, 0, 0, 0);");
 
-            // Update children of content
             for (var child : content.getChildren()) {
-                if (child instanceof HBox) { // File section
+                if (child instanceof HBox) { 
                     for (var subChild : ((HBox) child).getChildren()) {
                         if (subChild instanceof TextField) {
                             ((TextField) subChild).setStyle("-fx-background-color: #FFFFFF; -fx-text-fill: " + customTextColor + "; -fx-prompt-text-fill: derive(" + customTextColor + ", 50%);");
@@ -350,7 +346,7 @@ public class ComboEditorApp extends Application {
                             ((Button) subChild).setStyle("-fx-background-color: " + customButtonColor + "; -fx-text-fill: " + customTextColor + ";");
                         }
                     }
-                } else if (child instanceof GridPane) { // Options grid
+                } else if (child instanceof GridPane) { 
                     for (var subChild : ((GridPane) child).getChildren()) {
                         if (subChild instanceof Button) {
                             ((Button) subChild).setStyle("-fx-background-color: " + customButtonColor + "; -fx-text-fill: " + customTextColor + ";");
@@ -360,13 +356,13 @@ public class ComboEditorApp extends Application {
                             }
                         }
                     }
-                } else if (child instanceof TextArea) { // Log area
+                } else if (child instanceof TextArea) { 
                     ((TextArea) child).setStyle("-fx-control-inner-background: #FFFFFF; -fx-text-fill: " + customTextColor + ";");
                 }
             }
         }
 
-        // Update root background
+       
         BorderPane root = (BorderPane) scene.getRoot();
         LinearGradient gradient = new LinearGradient(0, 0, 1, 1, true, javafx.scene.paint.CycleMethod.NO_CYCLE,
                 new Stop(0, Color.web(customBackgroundColor)), new Stop(1, Color.web("#E0E0E0")));
@@ -402,7 +398,7 @@ public class ComboEditorApp extends Application {
         ft.play();
 
         String functionName = null;
-        switch (option.toLowerCase().replaceAll("[0-9 )]+", "")) { // Strip numbers and parentheses for matching
+        switch (option.toLowerCase().replaceAll("[0-9 )]+", "")) { 
             case "delete passwords": functionName = "password_remover"; break;
             case "delete emails": functionName = "email_remover"; break;
             case "remove duplicates": functionName = "remove_duplicate"; break;
@@ -449,7 +445,7 @@ public class ComboEditorApp extends Application {
                 showAlert("Error", "No second file selected for combining!");
             }
         } else {
-            executePythonScript(functionName, filePath, tabType, option, "1"); // Default for other functions
+            executePythonScript(functionName, filePath, tabType, option, "1"); 
         }
     }
 
@@ -498,7 +494,7 @@ public class ComboEditorApp extends Application {
         } catch (InterruptedException e) {
             logArea.appendText("Operation interrupted: " + (e.getMessage() != null ? e.getMessage() : "Unknown error") + "\n");
             showNotification("Error", "Operation interrupted: " + (e.getMessage() != null ? e.getMessage() : "Unknown error"));
-            Thread.currentThread().isInterrupted(); // Clear interrupt status
+            Thread.currentThread().isInterrupted(); 
         } catch (ExecutionException | TimeoutException e) {
             logArea.appendText("Error executing Python script: " + (e.getMessage() != null ? e.getMessage() : "Unknown error") + "\n");
             showNotification("Error", "Failed to execute Python script: " + (e.getMessage() != null ? e.getMessage() : "Unknown error"));
