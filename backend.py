@@ -77,10 +77,8 @@ def removelines(file_path: str, tab_type: str) -> str:
 def combine_combos(file_path: str, tab_type: str, second_file_path: str) -> str:
     try:
         with open('combined.txt', 'w', encoding='utf-8') as outfile:
-            # Write contents of the first file
             with open(file_path, 'r', encoding='utf-8', errors='replace') as infile1:
                 outfile.writelines(infile1)
-            # Append contents of the second file
             with open(second_file_path, 'r', encoding='utf-8', errors='replace') as infile2:
                 outfile.writelines(infile2)
         return "Combos combined successfully.\n"
@@ -198,7 +196,7 @@ def cc_extractor(file_path: str, tab_type: str) -> str:
         return f"Error: {str(e)}\n"
 
 if __name__ == "__main__":
-    if len(sys.argv) not in [4, 5]:  # Allow 4 args for most functions, 5 for splitter
+    if len(sys.argv) not in [4, 5]: 
         print("Usage: python backend.py <function> <file_path> <tab_type> [<num_parts> or <second_file_path>]")
         sys.exit(1)
     
