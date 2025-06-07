@@ -1,0 +1,54 @@
+.root {
+    -fx-background-color: transparent;
+}
+
+.button {
+    -fx-background-color: rgba(30, 30, 30, 0.8);
+    -fx-text-fill: #FFFFFF;
+    -fx-font-family: "Arial";
+    -fx-font-size: 12px;
+    -fx-background-radius: 5;
+    -fx-border-color: #00D4FF;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, #00D4FF, 10, 0, 0, 0);
+}
+
+.button:hover {
+    -fx-background-color: #00D4FF;
+    -fx-text-fill: #000000;
+}
+
+.text-field {
+    -fx-background-color: rgba(30, 30, 30, 0.8);
+    -fx-text-fill: #FFFFFF;
+    -fx-prompt-text-fill: #666666;
+    -fx-background-radius: 5;
+    -fx-border-color: #00D4FF;
+    -fx-border-width: 1;
+    -fx-font-family: "Arial";
+}
+
+.text-area {
+    -fx-background-color: rgba(30, 30, 30, 0.8);
+    -fx-text-fill: #FFFFFF;
+    -fx-background-radius: 5;
+    -fx-border-color: #00D4FF;
+    -fx-border-width: 1;
+    -fx-font-family: "Arial";
+}
+
+.tab-pane .tab-header-area .tab {
+    -fx-background-color: rgba(30, 30, 30, 0.8);
+    -fx-text-fill: #FFFFFF;
+    -fx-font-family: "Arial";
+    -fx-border-width: 0 1 0 0;
+    -fx-border-color: #00D4FF;
+    -fx-effect: dropshadow(gaussian, #00D4FF, 5, 0, 0, 0);
+}
+
+.tab-pane .tab-header-area .tab:selected {
+    -fx-background-color: #00D4FF;
+    -fx-text-fill: #000000;
+    -fx-border-width: 0 0 2 0;
+    -fx-border-color: #00D4FF;
+}

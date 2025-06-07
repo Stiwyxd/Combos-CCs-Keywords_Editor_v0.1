@@ -1,0 +1,52 @@
+.root {
+    -fx-background-color: #F5F5F5;
+}
+
+.button {
+    -fx-background-color: #E0E0E0;
+    -fx-text-fill: #333333;
+    -fx-font-family: "Arial";
+    -fx-font-size: 12px;
+    -fx-background-radius: 3;
+    -fx-border-color: #B0E0E6;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 0, 0);
+}
+
+.button:hover {
+    -fx-background-color: #B0E0E6;
+    -fx-text-fill: #333333;
+}
+
+.text-field {
+    -fx-background-color: #D3D3D3;
+    -fx-text-fill: #333333;
+    -fx-prompt-text-fill: #666666;
+    -fx-background-radius: 3;
+    -fx-border-color: #B0E0E6;
+    -fx-border-width: 1;
+    -fx-font-family: "Arial";
+}
+
+.text-area {
+    -fx-background-color: #D3D3D3;
+    -fx-text-fill: #333333;
+    -fx-background-radius: 3;
+    -fx-border-color: #B0E0E6;
+    -fx-border-width: 1;
+    -fx-font-family: "Arial";
+}
+
+.tab-pane .tab-header-area .tab {
+    -fx-background-color: #D3D3D3;
+    -fx-text-fill: #333333;
+    -fx-font-family: "Arial";
+    -fx-border-width: 0 1 0 0;
+    -fx-border-color: #B0E0E6;
+}
+
+.tab-pane .tab-header-area .tab:selected {
+    -fx-background-color: #B0E0E6;
+    -fx-text-fill: #333333;
+    -fx-border-width: 0 0 2 0;
+}
