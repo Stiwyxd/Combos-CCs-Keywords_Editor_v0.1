@@ -1,0 +1,134 @@
+
+
+# Ultimate Editor v0.1
+
+## Overview
+Welcome to **Ultimate Editor v0.1**, a JavaFX-based desktop application developed by Stiwy. This versatile text and combo editor offers customizable themes and backend processing via Python, making it ideal for text manipulation, keyword management, and personalized workflows. This repository contains the source code and necessary files to run the application.
+
+## What You Need
+
+To use Ultimate Editor v0.1, ensure you have the following:
+
+- **Java Runtime Environment (JRE)**:
+  - Version 17 or higher (download from [adoptium.net](https://adoptium.net/)).
+  - Verify installation by running `java -version` in your terminal (Command Prompt, PowerShell, or equivalent).
+
+- **JavaFX SDK**:
+  - Version 21.0.7, specifically the `lib` folder (e.g., containing `javafx.controls.jar`, `javafx.fxml.jar`).
+  - Download from [gluonhq.com](https://gluonhq.com/products/javafx/) and place the `lib` folder in the project directory.
+
+- **Repository Files**:
+  - `UltimateEditor.jar`: The compiled Java application.
+  - `python-embeddable` folder: A portable Python environment for the backend script.
+  - CSS files (`classy.css`, `tesla.css`, `neon.css`, `milky.css`, `futuristic.css`): Included in the JAR or provided for theme support.
+  - Source files (`ComboEditorApp.java`, `backend.py`, `Manifest.txt`): Available for reference or modification.
+
+- **System Requirements**:
+  - Windows operating system (adaptable to other OS with JavaFX support).
+  - At least 512 MB RAM and 100 MB disk space.
+
+- **Optional**:
+  - Terminal access for manual execution.
+  - Administrative privileges if installing JRE or moving files.
+
+Clone this repository or download the ZIP to get started:
+```
+git clone https://github.com/Stiwyxd/Combos-CCs-Keywords_Editor_v0.1/
+```
+## How to Run
+
+Since an executable (`.exe`) isn’t finalized yet, run the application using the JAR file with these steps:
+
+1. **Install Java**:
+   - Download and install JRE 17+ from [adoptium.net](https://adoptium.net/).
+   - Open a terminal and type `java -version` to confirm (e.g., `openjdk version "17.0.12"`).
+
+2. **Set Up the Project**:
+   - Extract the repository files to a directory, e.g., `C:\Users\Username\UltimateEditor`.
+   - Place the JavaFX `lib` folder (from the SDK) in the same directory.
+
+3. **Run the Application**:
+   - Open Command Prompt, PowerShell, or your terminal.
+   - Navigate to the project directory:
+     ```
+     cd C:\Users\Username\UltimateEditor
+     ```
+   - Execute the JAR:
+     ```
+     java --module-path lib --add-modules javafx.controls,javafx.fxml -jar UltimateEditor.jar
+     ```
+   - A JavaFX window should open, indicating the app is running.
+
+4. **Troubleshooting**:
+   - If you see "module not found," ensure the `lib` folder contains the JavaFX `.jar` files.
+   - If the window doesn’t load, check the terminal for errors (e.g., manifest issues) and recreate the JAR if needed (see [Building from Source](#building-from-source)).
+
+**Note**: If an `.exe` is added in future releases (e.g., via `jpackage` or Launch4j), double-clicking it will replace these steps. Check the [Releases](https://github.com/Stiwyxd/Combos-CCs-Keywords_Editor_v0.1/) page for updates.
+
+## Functions
+
+Ultimate Editor v0.1 provides a range of features through its Java frontend, Python backend, and customizable themes:
+
+### 1. Text and Combo Editing
+- **Description**: Allows users to input, edit, and manage text or combo data (e.g., lists or paired items) in a dedicated text area.
+- **How to Use**: Type or paste content directly. Use shortcuts like Ctrl+C (copy) and Ctrl+V (paste) for efficiency.
+- **Purpose**: Acts as the primary workspace for creating or modifying text-based content.
+
+### 2. Theme Customization
+- **Description**: Offers five unique themes to personalize the interface:
+  - **Classy**: Elegant, muted design for a professional look.
+  - **Tesla**: Modern, tech-inspired aesthetic with sleek colors.
+  - **Neon**: Vibrant, glowing style for high contrast.
+  - **Milky**: Soft, pastel palette for a calming effect.
+  - **Futuristic**: Bold, sci-fi-inspired layout.
+- **How to Use**: Select a theme from a dropdown menu or button (if implemented). The UI updates instantly.
+- **Purpose**: Enhances user comfort and adaptability to different preferences.
+
+### 3. Backend Processing via Python
+- **Description**: Executes advanced operations through `backend.py`, including:
+  - **File Operations**: Reads from or writes to files based on a specified path.
+  - **Keyword Management**: Extracts or processes keywords in the text.
+  - **Custom Tasks**: Performs user-defined functions passed as arguments.
+- **How to Use**: Click a "Process" or "Save" button (if available) and enter a file path or parameters if prompted. Results appear in the editor.
+- **Purpose**: Extends functionality for complex text processing or file handling.
+
+### 4. User Interface Controls
+- **Description**: Includes interactive elements like buttons or menus for theme switching and backend task initiation, and possibly tabs for multiple editing contexts.
+- **How to Use**: Click buttons to apply themes or run tasks, and switch tabs to manage different content sets.
+- **Purpose**: Provides an intuitive way to access features and organize the workspace.
+
+### 5. Real-Time Feedback
+- **Description**: Displays backend operation results or edits directly in the text area.
+- **How to Use**: Trigger a Python task and wait for the editor to update with the output.
+- **Purpose**: Offers immediate feedback, improving workflow efficiency.
+
+## Additional Information
+
+- **Error Handling**: If a function fails (e.g., missing file), the terminal may show an error. Check paths or inputs and retry.
+- **Customization**: Modify `backend.py` for new tasks or CSS files for custom themes (requires basic coding skills).
+- **Performance**: Suitable for small to medium text files; large files may slow down due to Python integration.
+
+## Building from Source (Optional)
+
+For developers or if the JAR needs recreation:
+1. Install JDK 17 and JavaFX SDK 21.0.7.
+2. Compile the source:
+   ```
+   javac --module-path lib --add-modules javafx.controls,javafx.fxml ComboEditorApp.java
+   ```
+3. Create the JAR:
+   ```
+   jar cfm UltimateEditor.jar Manifest.txt ComboEditorApp.class backend.py classy.css tesla.css neon.css milky.css futuristic.css
+   ```
+4. Run as described above.
+
+## Contributing
+Feel free to fork this repository, submit issues, or pull requests. Suggestions for new features or theme designs are welcome!
+
+## License
+[Add your license here, e.g., MIT or Apache 2.0, if applicable.]
+
+## Contact
+For support, reach out to :
+Github : https://github.com/Stiwyxd/
+Telegram : https://t.me/Stiwy_xd
